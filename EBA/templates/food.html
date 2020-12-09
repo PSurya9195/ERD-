@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>FOOD LIST </title>
+
+</head>
+
+<body>
+	<h1> FOOD LIST </h1>
+
+  <form action="">
+		{% for food in fl%}
+		
+      <input type="checkbox" id={{food.Food_Name}} name="" value="">
+      <label for="food">{{food.Food_Name}}
+          {{food.Price}}</label><br>
+      
+    
+		{% endfor %}
+    <input type="submit" value="ADD TO CART">
+
+  </form>
+</body>
+
+</html>

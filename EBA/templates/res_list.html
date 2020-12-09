@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>RESTAURANT LIST </title>
+</head>
+
+<body>
+	<h1> RESTAURANT LIST </h1>
+
+
+
+	<ul>
+		{% for res in rl%}
+		<li>
+      
+      <a href="{% url 'flist' r_id=res.Restaurant_Id %}"> {{res}} </a>
+      
+    </li>
+		{% endfor %}
+	</ul>
+</body>
+
+</html>

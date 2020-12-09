@@ -1,0 +1,13 @@
+<html>
+  <head>
+   <title> Customer Registration </title>
+  </head>
+  <body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ user_form }}
+        {{ customer_form }}
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
