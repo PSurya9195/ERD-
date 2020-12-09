@@ -3,7 +3,7 @@ from .models import Customer
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-
+#save
 class Location(forms.Form):
   location = forms.CharField(label='location',max_length=100)
 
