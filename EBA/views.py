@@ -7,7 +7,10 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UserForm,CustomerForm
 
 
+# VIEW is the core of django, if there is no view, there will be no web page in django
 
+
+#Taking input from user about what restaurants are all needed to show up 
 def get_location(request):
     if request.method == 'POST':
         form = Location(request.POST)
@@ -24,17 +27,22 @@ def get_location(request):
     return render(request, 'location.html', {'form': form})
 
 
-    
+ 
+#Showing up restaurants based on the input given by user from FORM Location
 def Restaurant_List(request, loc):
   RL = Location_Restaurant.objects.filter(Location=loc)
   return render(request,'res_list.html',{'rl':RL})
 
 
+
+#After showing up location based restaurants, a particular restaurant was shown and food they are having will be shown up
 def Food_List(request, r_id):
   FL = Restaurant_Food_New.objects.filter(Restaurant_Id__Restaurant_Id=r_id)
   return render(request,'food.html',{'fl':FL})
 
 
+
+#User Details getting registered using this view
 def register(request):
   if request.method == 'POST':
     user_form = UserForm(request.POST)
